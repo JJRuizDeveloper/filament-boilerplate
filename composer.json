@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "bezhansalleh/filament-language-switch": "^3.1",
         "blade-ui-kit/blade-icons": "^1.7",
         "filament/filament": "^3.2",
         "hexters/hexa-lite": "^1.0",

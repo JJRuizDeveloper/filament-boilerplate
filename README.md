@@ -2,7 +2,7 @@
 
 - **PHP >= 8.1** (with: `BCMath`, `Ctype`, `Fileinfo`, `JSON`, `Mbstring`, `OpenSSL`, `PDO`, `Tokenizer`, `XML`)
 - **Composer**
-- **MySQL/MariaDB/PostgreSQL**
+- **MySQL/MariaDB/PostgreSQL/SQlite**
 - **Web Server**
 - **Node.js** y **npm/yarn**
 
@@ -29,13 +29,22 @@ php artisan key:generate
 
 ## Settings
 
-### 1. Run migrations and kan-ban styling
+### 1. Run migrations and composer plugins install
 ```bash
 php artisan migrate
 php artisan filament-kanban:install
+php artisan icons:cache
 ```
 
 ### 2. Create FilamentPHP admin account
 ```bash
 php artisan hexa:account --create
+```
+
+### 3. Add Locales to AppServiceProvider boot
+```bash
+ LanguageSwitch::configureUsing(function (LanguageSwitch $switch) {
+            $switch
+                ->locales(['es','en','fr']); // also accepts a closure
+        });
 ```
