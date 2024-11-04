@@ -48,3 +48,10 @@ php artisan hexa:account --create
                 ->locales(['es','en','fr']); // also accepts a closure
         });
 ```
+
+## Go To Production
+```bash
+php artisan icons:cache
+php artisan optimize
+npm run build
+```
